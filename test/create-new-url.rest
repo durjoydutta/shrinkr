@@ -1,0 +1,7 @@
+### create new url
+POST http://localhost:3000/api/v1/url/create-url
+Content-Type: application/json
+
+{
+    "longUrl": "https://www.example.com"
+}
