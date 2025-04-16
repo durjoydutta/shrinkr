@@ -11,8 +11,6 @@ node_modules
 dist
 dist-ssr
 *.local
-.env
-.env.*
 # *.rest
 
 # Editor directories and files
@@ -27,7 +25,7 @@ dist-ssr
 *.sw?
 
 .flaskenv*
+.env*
 !.env.project
 !.env.vault
 .vercel
-.env*
