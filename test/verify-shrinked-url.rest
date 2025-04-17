@@ -1,3 +1,4 @@
-### get original url back
-GET http://localhost:3000/ZbY5G1sKAG
-
+### get original url back (only response)
+GET http://localhost:3000/api/v1/url/ttv
+### get original url back (with redirect)
+GET http://localhost:3000/ttv
