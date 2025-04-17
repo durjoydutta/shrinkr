@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import generateCustomId from "../utils/generateNanoId.js";
-import { URL } from "url";
 
 const UrlSchema = new mongoose.Schema(
   {
