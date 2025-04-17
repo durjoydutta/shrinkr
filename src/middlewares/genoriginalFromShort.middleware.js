@@ -4,7 +4,7 @@ import UrlModel from "../models/url.model.js";
 const genOriginalFromShort = async (req, res, next) => {
   const shortCode = req.params?.shortCode;
   try {
-    const existingUrl = await UrlModel.findOne({ shortUrl: shortCode });
+    const existingUrl = await UrlModel.findOne({ shortCode: shortCode });
 
     if (!existingUrl) {
       res.status(401).json({

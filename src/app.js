@@ -2,13 +2,13 @@ import express from "express";
 import cors from "cors";
 import indexRouter from "./routes/index.router.js";
 import { API_BASE_URL } from "./config/env.config.js";
-import genOriginalFromShort from "./middlewares/genoriginalFromShort.middleware.js";
-import validateShortCode from "./middlewares/validateShortCode.middleware.js";
+// import genOriginalFromShort from "./middlewares/genoriginalFromShort.middleware.js";
+// import validateShortCode from "./middlewares/validateShortCode.middleware.js";
 
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:3000", //to be changed to the frontend URL
+  origin: "http://localhost:5173", //to be changed to the frontend URL
   optionsSuccessStatus: 200,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
@@ -30,8 +30,8 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/:shortCode", validateShortCode, genOriginalFromShort, (req, res) => {
-  res.status(302).redirect(req.longUrl);
-}); // get original url
+// app.get("/:shortCode", validateShortCode, genOriginalFromShort, (req, res) => {
+//   res.status(302).redirect(req.longUrl);
+// }); // get original url
 
 export default app;

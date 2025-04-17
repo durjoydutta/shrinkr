@@ -1,4 +1,3 @@
-import { DOMAIN_NAME } from "../config/env.config.js";
 import UrlModel from "../models/url.model.js";
 
 //middleware to validate long URL format and check for existing URLs
@@ -18,7 +17,7 @@ const isValidLongUrl = async (req, res, next) => {
       return res.status(200).json({
         shrinkCount: isExistingUrl.shrinkCount,
         clicksCount: isExistingUrl.clicksCount,
-        shortUrl: `${DOMAIN_NAME}/${isExistingUrl.shortUrl}`,
+        shortCode: `${isExistingUrl.shortCode}`,
       });
     }
     next();

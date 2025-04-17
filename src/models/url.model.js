@@ -8,7 +8,7 @@ const UrlSchema = new mongoose.Schema(
       required: [true, "A valid URL is required"],
       unique: true,
     },
-    shortUrl: {
+    shortCode: {
       type: String,
       required: [true, "Error creating short URL"],
       minLength: 3,

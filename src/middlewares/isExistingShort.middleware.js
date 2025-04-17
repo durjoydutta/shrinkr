@@ -8,7 +8,7 @@ const isExistingShort = async (req, res, next) => {
     return next();
   }
   try {
-    const isExisting = await UrlModel.findOne({ shortUrl: shortCode });
+    const isExisting = await UrlModel.findOne({ shortCode: shortCode });
     if (isExisting) {
       return res.status(403).json({
         message: "The given alias already exists",

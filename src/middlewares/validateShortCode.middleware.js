@@ -1,10 +1,10 @@
 const validateShortCode = (req, res, next) => {
   const shortCode = req.params?.shortCode || req.body?.shortCode;
   
-  // const { method } = req;
-  // if (method === 'POST' && (!shortCode || shortCode === '' || shortCode === 'undefined')) {
-  //   return next(); // skip validation for POST requests without shortCode (then it will be generated automatically)
-  // } 
+  const { method } = req;
+  if (method === 'POST' && (!shortCode || shortCode === '' || shortCode === 'undefined')) {
+    return next(); // skip validation for POST requests without shortCode (then it will be generated automatically)
+  } 
 
   let sanitizedShortCode;
   if (shortCode) sanitizedShortCode = shortCode.trim().toLowerCase();
