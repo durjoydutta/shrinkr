@@ -3,10 +3,10 @@ import UrlModel from "../models/url.model.js";
 
 //middleware to validate long URL format and check for existing URLs
 const isValidLongUrl = async (req, res, next) => {
-  const { longUrl } = req.body;
-
+  let { longUrl } = req.body;
+  if (longUrl) longUrl = longUrl.trim().toLowerCase();
   //check url format using regex
-  const urlRegex = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/\S*)?$/;
+  const urlRegex = /^(https?:\/\/)?([a-z0-9-]+\.)+[a-z]{2,4}(\/\S*)?$/;
   if (!longUrl || longUrl === 'undefined' || !urlRegex.test(longUrl)) {
     return res.status(400).json({ error: "Invalid URL format" });
   }

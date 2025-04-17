@@ -3,6 +3,6 @@ POST http://localhost:3000/api/v1/url/create-url
 Content-Type: application/json
 
 {
-    "longUrl": "https://sdsdfdsftwitchsdfsd.tv",
-    "shortUrl": "twsd"
+    "longUrl": "https://asdfasdfdsads.coem",
+    "shortCode": "short"
 }

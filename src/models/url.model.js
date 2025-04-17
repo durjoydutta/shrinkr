@@ -19,7 +19,8 @@ const UrlSchema = new mongoose.Schema(
         validator: function (value) {
           return /^[\w]{3,6}$/.test(value);
         },
-        message: "Database Error: Short URL must be 3 to 6 alphanumeric characters",
+        message:
+          "Database Error: Short URL must be 3 to 6 alphanumeric characters",
       },
       unique: true,
     },

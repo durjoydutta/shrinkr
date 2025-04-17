@@ -2,14 +2,15 @@ import UrlModel from "../models/url.model.js";
 import { DOMAIN_NAME } from "../config/env.config.js";
 
 export const createShortUrl = async (req, res) => {
-  const { longUrl } = req.body; 
-  const { shortCode } = req.body; 
-
+  const { longUrl, shortCode } = req.body;
   try {
-    const newUrl = new UrlModel({
-      longUrl,
-      shortUrl: shortCode && shortCode.length > 0 ? shortCode : undefined,
-    });
+    let newUrl;
+    shortCode && shortCode.length > 0
+      ? (newUrl = new UrlModel({
+          longUrl,
+          shortUrl: shortCode,
+        }))
+      : (newUrl = new UrlModel({ longUrl }));
     await newUrl.save();
 
     if (newUrl) {
