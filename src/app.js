@@ -1,17 +1,19 @@
 import express from "express";
 import cors from "cors";
 import indexRouter from "./routes/index.router.js";
-import { API_BASE_URL } from "./config/env.config.js";
+import { API_BASE_URL, DOMAIN_NAME } from "./config/env.config.js";
 // import genOriginalFromShort from "./middlewares/genoriginalFromShort.middleware.js";
 // import validateShortCode from "./middlewares/validateShortCode.middleware.js";
 
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:5173", //to be changed to the frontend URL
+  origin: DOMAIN_NAME,
   optionsSuccessStatus: 200,
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
   credentials: true,
+  allowedHeaders: ["Authorization", "Content-Type"],
+  maxAge: 3600,
 };
 
 // setup middlewares

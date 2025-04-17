@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --env-file .env --watch server.js",
     "build": "node --env-file .env server.js",
-    "start": "node server.js",
+    "start": "echo hello world",
     "lint": "eslint ."
   },
   "repository": {
